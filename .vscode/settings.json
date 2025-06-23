@@ -1,0 +1,16 @@
+{
+  // Dile a la extensión de Prettier que use la versión de este proyecto
+  "prettier.prettierPath": "./node_modules/prettier/index.mjs",
+
+  // (Opcional pero recomendado) Especifica a VS Code cuál es tu formateador
+  // por defecto para cada tipo de archivo.
+  "[django-html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
