@@ -1,24 +1,18 @@
 {
   "name": "url_shortener",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Django + Tailwind + Prettier + djlint + black",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier . --write && npm run format-django && npm run format-py",
+    "check-format": "prettier . --check",
+    "format-django": "djlint app/templates/ --reformat",
+    "format-py": "black ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CrisPlays80/url_shortener.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CrisPlays80/url_shortener/issues"
-  },
-  "homepage": "https://github.com/CrisPlays80/url_shortener#readme",
-  "description": "",
   "devDependencies": {
-    "prettier": "^3.6.0",
-    "prettier-plugin-tailwindcss": "^0.6.13"
+    "prettier": "2.8.8",
+    "prettier-plugin-tailwindcss": "0.2.8"
+  },
+  "prettier": {
+    "plugins": ["prettier-plugin-tailwindcss"]
   }
 }

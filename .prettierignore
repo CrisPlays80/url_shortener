@@ -19,3 +19,6 @@ package-lock.json
 # Otros
 .vscode/
 __pycache__/
+
+# Manejados por Djlint
+*.html
