@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}ShortenIt{% endblock %}
 {% block content %}
-    <div class="relative flex size-full min-h-screen flex-col bg-page group/design-root overflow-x-hidden">
+    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
             <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#223f49] px-10 py-3">
                 <div class="flex items-center gap-4 text-white">
@@ -37,15 +37,11 @@
                                required
                                class="flex-1 px-4 py-2 rounded-lg border border-[#315a68] bg-[#0e191f] text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         <button type="submit"
-                                class="px-6 py-2 bg-[#0F6B8A] hover:bg-[#FFFFFF] hover:text-[#0F6B8A] text-white font-medium rounded-lg transition-colors">
+                                class="sm:px-8 sm:py-2 px-4 py-2 bg-[#0F6B8A] hover:bg-[#FFFFFF] hover:text-[#0F6B8A] text-white font-medium rounded-lg transition-colors">
                             Shorten
                         </button>
                     </div>
-                    <div class="px-4">
-                        <div class="p-3 mb-4 text-sm rounded-lg bg-green-900 text-green-100">
-                            <p>URL shortened successfully!</p>
-                        </div>
-                    </div>
+
                     <div class="px-4 py-3">
                         <div class="overflow-hidden rounded-lg border border-[#315a68] bg-[#101e23]">
                             <table class="w-full">

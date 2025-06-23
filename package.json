@@ -13,6 +13,8 @@
     "prettier-plugin-tailwindcss": "0.2.8"
   },
   "prettier": {
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }
