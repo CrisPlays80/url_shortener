@@ -1,165 +1,87 @@
-{% extends 'app/base.html' %} {% load static %} {% block title %}ShortenIt{% endblock %} 
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}ShortenIt{% endblock %}
 {% block content %}
-<div
-  class="relative flex size-full min-h-screen flex-col bg-[#101e23] dark group/design-root overflow-x-hidden"
->
-  <div class="layout-container flex h-full grow flex-col">
-    <header
-      class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#223f49] px-10 py-3"
-    >
-      <div class="flex items-center gap-4 text-white">
-        <div class="size-4">
-          <svg
-            viewBox="0 0 48 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
-              fill="currentColor"
-            ></path>
-          </svg>
+    <div class="relative flex size-full min-h-screen flex-col bg-page group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#223f49] px-10 py-3">
+                <div class="flex items-center gap-4 text-white">
+                    <div class="size-4">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor">
+                            </path>
+                        </svg>
+                    </div>
+                    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">ShortenIt</h2>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-white font-bold">Welcome</span>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                         style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-white hover:text-gray-300">Login</a>
+                    <a href="#" class="text-white hover:text-gray-300">Register</a>
+                </div>
+            </header>
+            <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <h2 class="text-white tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">
+                        Shorten your links
+                    </h2>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input type="url"
+                               name="original_url"
+                               placeholder="Paste your long URL here"
+                               required
+                               class="flex-1 px-4 py-2 rounded-lg border border-[#315a68] bg-[#0e191f] text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <button type="submit"
+                                class="px-6 py-2 bg-[#0F6B8A] hover:bg-[#FFFFFF] hover:text-[#0F6B8A] text-white font-medium rounded-lg transition-colors">
+                            Shorten
+                        </button>
+                    </div>
+                    <div class="px-4">
+                        <div class="p-3 mb-4 text-sm rounded-lg bg-green-900 text-green-100">
+                            <p>URL shortened successfully!</p>
+                        </div>
+                    </div>
+                    <div class="px-4 py-3">
+                        <div class="overflow-hidden rounded-lg border border-[#315a68] bg-[#101e23]">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="bg-[#182d34]">
+                                        <th class="px-4 py-3 text-left text-white w-full sm:w-auto">Original URL</th>
+                                        <th class="px-4 py-3 text-left text-white hidden sm:table-cell">Short URL</th>
+                                        <th class="px-4 py-3 text-right text-white">Clicks</th>
+                                        <th class="px-4 py-3 text-right text-white">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-t border-t-[#315a68] hover:bg-[#1a2e35]">
+                                        <td class="px-4 py-4 text-[#90bccb] text-sm break-all">
+                                            <a href="#" target="_blank" class="hover:underline">#</a>
+                                        </td>
+                                        <td class="px-4 py-4 text-blue-400 hidden sm:table-cell">
+                                            <a href="#" target="_blank" class="hover:underline">#</a>
+                                        </td>
+                                        <td class="px-4 py-4 text-right text-[#90bccb]">#</td>
+                                        <td class="px-4 py-4 text-right">
+                                            <button onclick="copyToClipboard('#')"
+                                                    class="text-blue-400 hover:text-blue-300 mr-2">Copy</button>
+                                            <a href="#" class="text-blue-400 hover:text-blue-300">Details</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h2
-          class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
-        >
-          ShortenIt
-        </h2>
-      </div>
-      {% if user.is_authenticated %}
-      <div class="flex items-center gap-4">
-        <span class="text-white">Welcome, {{ user.username }}</span>
-        <div
-          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-          style="background-image: url('{{ user.profile.image.url }}')"
-        ></div>
-      </div>
-      {% else %}
-      <div class="flex gap-4">
-        <a href="{% url 'login' %}" class="text-white hover:text-gray-300"
-          >Login</a
-        >
-        <a href="{% url 'register' %}" class="text-white hover:text-gray-300"
-          >Register</a
-        >
-      </div>
-      {% endif %}
-    </header>
-
-    <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
-      <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-        <h2
-          class="text-white tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5"
-        >
-          Shorten your links
-        </h2>
-
-        <form
-          method="POST"
-          action="{% url 'shorten' %}"
-          class="flex flex-col gap-4 px-4 py-3"
-        >
-          {% csrf_token %}
-          <div class="flex flex-col sm:flex-row gap-2">
-            <input
-              type="url"
-              name="original_url"
-              placeholder="Paste your long URL here"
-              required
-              class="flex-1 px-4 py-2 rounded-lg border border-[#315a68] bg-[#0e191f] text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button
-              type="submit"
-              class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
-            >
-              Shorten
-            </button>
-          </div>
-        </form>
-
-        {% if messages %}
-        <div class="px-4">
-          {% for message in messages %}
-          <div
-            class="p-3 mb-4 text-sm rounded-lg {% if message.tags == 'error' %}bg-red-900 text-red-100{% else %}bg-green-900 text-green-100{% endif %}"
-          >
-            {{ message }}
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %} {% if urls %}
-        <div class="px-4 py-3">
-          <div
-            class="overflow-hidden rounded-lg border border-[#315a68] bg-[#101e23]"
-          >
-            <table class="w-full">
-              <thead>
-                <tr class="bg-[#182d34]">
-                  <th class="px-4 py-3 text-left text-white w-full sm:w-auto">
-                    Original URL
-                  </th>
-                  <th
-                    class="px-4 py-3 text-left text-white hidden sm:table-cell"
-                  >
-                    Short URL
-                  </th>
-                  <th class="px-4 py-3 text-right text-white">Clicks</th>
-                  <th class="px-4 py-3 text-right text-white">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for url in urls %}
-                <tr class="border-t border-t-[#315a68] hover:bg-[#1a2e35]">
-                  <td class="px-4 py-4 text-[#90bccb] text-sm break-all">
-                    <a
-                      href="{{ url.original_url }}"
-                      target="_blank"
-                      class="hover:underline"
-                    >
-                      {{ url.original_url|truncatechars:50 }}
-                    </a>
-                  </td>
-                  <td class="px-4 py-4 text-blue-400 hidden sm:table-cell">
-                    <a
-                      href="{% url 'redirect_to_url' url.short_code %}"
-                      target="_blank"
-                      class="hover:underline"
-                    >
-                      {{ request.scheme }}://{{ request.get_host }}/{{
-                      url.short_code }}
-                    </a>
-                  </td>
-                  <td class="px-4 py-4 text-right text-[#90bccb]">
-                    {{ url.clicks }}
-                  </td>
-                  <td class="px-4 py-4 text-right">
-                    <button
-                      onclick="copyToClipboard('{{ request.scheme }}://{{ request.get_host }}/{{ url.short_code }}')"
-                      class="text-blue-400 hover:text-blue-300 mr-2"
-                    >
-                      Copy
-                    </button>
-                    <a
-                      href="{% url 'url_detail' url.short_code %}"
-                      class="text-blue-400 hover:text-blue-300"
-                    >
-                      Details
-                    </a>
-                  </td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        {% endif %}
-      </div>
     </div>
-  </div>
-</div>
-
-{% block extra_js %}
-<script>
+    {% block extra_js %}
+        <script>
   function copyToClipboard(text) {
     navigator.clipboard
       .writeText(text)
@@ -171,5 +93,6 @@
         console.error("Could not copy text: ", err);
       });
   }
-</script>
-{% endblock %} {% endblock %}
+        </script>
+    {% endblock extra_js %}
+{% endblock content %}

@@ -1,6 +1,24 @@
 {
+  "name": "url_shortener",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrisPlays80/url_shortener.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrisPlays80/url_shortener/issues"
+  },
+  "homepage": "https://github.com/CrisPlays80/url_shortener#readme",
+  "description": "",
   "devDependencies": {
     "prettier": "^3.6.0",
-    "prettier-plugin-django": "^0.5.18"
+    "prettier-plugin-tailwindcss": "^0.6.13"
   }
 }

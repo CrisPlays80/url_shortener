@@ -1,11 +1,3 @@
 {
-  "plugins": ["prettier-plugin-django"],
-  "overrides": [
-    {
-      "files": ["**/*.html"],
-      "options": {
-        "parser": "django-html"
-      }
-    }
-  ]
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

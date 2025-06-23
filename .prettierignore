@@ -1,0 +1,21 @@
+# Entorno Python
+env/
+migrations/
+*.py
+*.pyc
+*.sqlite3
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Archivos de datos o binarios
+*.json
+*.log
+*.svg
+*.png
+*.jpg
+
+# Otros
+.vscode/
+__pycache__/
