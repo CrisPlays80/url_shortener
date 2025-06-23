@@ -81,18 +81,12 @@
         </div>
     </div>
     {% block extra_js %}
-        <script>
-  function copyToClipboard(text) {
-    navigator.clipboard
-      .writeText(text)
-      .then(function () {
-        // Optional: Show a success message
-        alert("Copied to clipboard: " + text);
-      })
-      .catch(function (err) {
-        console.error("Could not copy text: ", err);
-      });
-  }
-        </script>
+      <script>
+          function copyToClipboard(text) {
+              navigator.clipboard.writeText(text)
+                  .then(() => alert("Copied to clipboard: " + text))
+                  .catch((err) => console.error("Could not copy text: ", err));
+          }
+      </script>
     {% endblock extra_js %}
 {% endblock content %}
